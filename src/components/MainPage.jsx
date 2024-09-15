@@ -18,8 +18,10 @@ function MainPage() {
       try {
         const { data } = await axios.get("https://dpg.gg/test/calendar.json");
         setContributions(data);
+
       } catch (error) {
         console.error(error);
+
       }
     };
 
@@ -56,6 +58,7 @@ function MainPage() {
         .map((date) => (date ? formatDateToISO(date) : null));
       weeks.push(week);
     }
+
     return weeks.map((week, index) => (
       <Week key={index}>
         {week.map((date, dateIndex) => (
@@ -65,6 +68,7 @@ function MainPage() {
             count={date ? contributions[date] || 0 : 0}
           />
         ))}
+        
       </Week>
     ));
   };
