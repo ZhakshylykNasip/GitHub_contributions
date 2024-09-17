@@ -18,10 +18,8 @@ function MainPage() {
       try {
         const { data } = await axios.get("https://dpg.gg/test/calendar.json");
         setContributions(data);
-
       } catch (error) {
         console.error(error);
-
       }
     };
 
@@ -68,7 +66,6 @@ function MainPage() {
             count={date ? contributions[date] || 0 : 0}
           />
         ))}
-        
       </Week>
     ));
   };
@@ -147,6 +144,7 @@ const Container = styled("div")`
   border-radius: 20px;
   padding: 20px 30px 40px 30px;
   background: #ffffff;
+
   .select-container {
     display: flex;
     justify-content: end;
